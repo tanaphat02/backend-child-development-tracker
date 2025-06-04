@@ -1,5 +1,6 @@
 const db = require("./models");
 const { Op } = require("sequelize");
+const bcrypt = require("bcryptjs"); // เพิ่ม bcrypt สำหรับ hash password
 
 async function seed() {
   await db.sequelize.sync({ force: true }); // ลบข้อมูลเก่าออกหมด
