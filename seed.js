@@ -38,7 +38,7 @@ async function seed() {
     });
 
     const father = await db.Father.create({
-      full_name: `พ่อ${i}`,
+      full_name: `พ่อ${i} เอเซอร์${i}`,
       prefix: "นาย",
       age: 40 + i,
       phone: `08100000${i.toString().padStart(2, "0")}`,
@@ -47,7 +47,7 @@ async function seed() {
     });
 
     const mother = await db.Mother.create({
-      full_name: `แม่${i}`,
+      full_name: `แม่${i} เอเซอร์${i}`,
       prefix: "นาง",
       age: 38 + i,
       phone: `08200000${i.toString().padStart(2, "0")}`,
@@ -56,7 +56,7 @@ async function seed() {
     });
 
     const guardian = await db.Guardian.create({
-      full_name: `ยาย${i}`,
+      full_name: `ยาย${i} เอเซอร์${i}`,
       prefix: "นาง",
       age: 65 + i,
       relationship: "ยาย",
