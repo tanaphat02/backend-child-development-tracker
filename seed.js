@@ -4,6 +4,13 @@ const { Op } = require("sequelize");
 async function seed() {
   await db.sequelize.sync({ force: true }); // ลบข้อมูลเก่าออกหมด
 
+  const hashedPassword = await bcrypt.hash("123456", 10);
+  await db.User.create({
+    username: "admin",
+    password: hashedPassword,
+    role: "admin",
+  });
+
   for (let i = 1; i <= 20; i++) {
     // สร้าง CurrentAddress, RegAddress, Father, Mother, Guardian
     const currentAddress = await db.CurrentAddress.create({
