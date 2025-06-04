@@ -8,6 +8,7 @@ async function seed() {
   const hashedPassword = await bcrypt.hash("123456", 10);
   await db.User.create({
     username: "admin",
+    name: "แอดมิน",
     password: hashedPassword,
     role: "admin",
   });
